@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>João Capucho</title>
+        <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+        <link>http://localhost:4000/</link>
+        <description></description>
+        <pubDate>Sat, 12 May 2018 11:51:53 -0300</pubDate>
+        
+        <item>
+            <title>First Commit</title>
+            <link>/2018/05/12/First-Commit.html</link>
+            <guid isPermaLink="true">/2018/05/12/First-Commit.html</guid>
+            <description>&lt;h1 id=&quot;just-a-simple-test&quot;&gt;Just a simple test&lt;/h1&gt;
+
+&lt;!-- Search should be working even for complicated escape symbols --&gt;
+&lt;!-- ```
+sed -i 's/\&quot;hostname\&quot;\:.*$/\&quot;hostname\&quot;\: \&quot;'$IPADDR'\&quot;\,/g' open-falcon/agent/config/cfg.json
+``` --&gt;
+</description>
+            <pubDate>Sat, 12 May 2018 00:00:00 -0300</pubDate>
+        </item>
+        
+    </channel>
+</rss>
