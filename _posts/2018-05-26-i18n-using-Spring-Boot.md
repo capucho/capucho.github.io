@@ -24,7 +24,7 @@ Now we can start typing our code. Let's create a Rest Controller that will print
 
 ![Project Structure](/assets/img/posts/2018-05-26-i18n-using-Spring-Boot/Project-Structure.png)
 
-```Java
+```java
 package com.joaocapucho.springi18n.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -65,7 +65,7 @@ messages.hello.world=Ola Mundo
 
 How will Spring know that should look into those files? First, we have to configure which files will be used as message properties. This is the bean that we would use to configure the message source:
 
-```Java
+```java
 public ResourceBundleMessageSource messageSource() {
   ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
   messageSource.setBasename("messages");
@@ -82,7 +82,7 @@ Now, we have only 2 more steps to fix the problem. The first one is to create a 
 
 This is done by creating a bean called `localeResolver`, like this:
 
-```Java
+```java
 package com.joaocapucho.springi18n;
 
 import java.util.Locale;
@@ -111,7 +111,7 @@ public class SpringI18nApplication {
 
 Now, the last step is to retrieve the message using the information from the LocaleResolver. We will need to add a MessageSource bean in our controller and use it to retrieve the message. 
 
-```Java
+```java
 package com.joaocapucho.springi18n.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
