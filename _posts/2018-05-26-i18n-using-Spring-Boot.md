@@ -1,4 +1,4 @@
-Nowadays, Spring Boot has achieved what Java developers have been waiting for a long time: a fast and simple way to create a project which is reliable and can go to a production environment in a couple of days or weeks. 
+Nowadays, Spring Boot has achieved what Java developers have been waiting for a long time: a fast and simple way to create a project which is reliable and can be deployed to production in a couple of days or weeks. 
 
 Consequently, one of many concerns when developing a project is how to handle internationalization. The growth of REST API's architecture made this even more necessary. 
 
