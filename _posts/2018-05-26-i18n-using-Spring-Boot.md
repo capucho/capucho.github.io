@@ -1,14 +1,14 @@
-Nowadays, Spring Boot has achieved what Java developers have been waiting for a long time: a fast and simple way to create a project which is reliable and can be deployed to production in a couple of days or weeks. 
+Nowadays, Spring Boot has achieved what Java developers have been waiting for a long time: a fast and simple way to create a project which is reliable and can be deployed to production in a couple of days or weeks.
 
-Consequently, one of many concerns when developing a project is how to handle internationalization. The growth of REST API's architecture made this even more necessary. 
+Consequently, one of many concerns when developing a project is how to handle internationalization. The growth of REST API's architecture made this even more necessary.
 
 Ok, but let's cut to the chase. I'm going to create a simple project just to prove how effortless it is. In the first place, let's open https://start.spring.io/ and create a new project using the Web dependency.
 
 ![Sprint Initializr](/assets/img/posts/2018-05-26-i18n-using-Spring-Boot/Spring-Starter.png)
 
-After the download is complete, let's open it with Eclipse (or the IDE of your choice). You should import as an Existing Maven project. Once you have done this, let's start the project. 
+After the download is complete, let's open it with Eclipse (or the IDE of your choice). You should import as an Existing Maven project. Once you have done this, let's start the project.
 
-There are two ways to start the project: one is inside Eclipse and the other is using a terminal. Let's use the second option for now because it's easier to read what is going on. So, open your terminal and move to the project folder. Once you're there type the following command: 
+There are two ways to start the project: one is inside Eclipse and the other is using a terminal. Let's use the second option for now because it's easier to read what is going on. So, open your terminal and move to the project folder. Once you're there type the following command:
 
 ```
 mvn spring-boot:run
@@ -99,7 +99,7 @@ public class SpringI18nApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringI18nApplication.class, args);
 	}
-	
+
 	@Bean
 	public LocaleResolver localeResolver( ) {
 		AcceptHeaderLocaleResolver localeResolver = new AcceptHeaderLocaleResolver();
@@ -109,7 +109,7 @@ public class SpringI18nApplication {
 }
 ```
 
-Now, the last step is to retrieve the message using the information from the LocaleResolver. We will need to add a MessageSource bean in our controller and use it to retrieve the message. 
+Now, the last step is to retrieve the message using the information from the LocaleResolver. We will need to add a MessageSource bean in our controller and use it to retrieve the message.
 
 ```java
 package com.joaocapucho.springi18n.controllers;
@@ -123,7 +123,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloWorldController {
-	
+
 	@Autowired
 	private MessageSource messageSource;
 
@@ -134,9 +134,9 @@ public class HelloWorldController {
 }
 ```
 
-The LocaleContextHolder has the location information provided by the localeResolver bean. 
+The LocaleContextHolder has the location information provided by the localeResolver bean.
 
-To test the implementation, we will use Postman (https://www.getpostman.com/) to send the request with the headers. 
+To test the implementation, we will use Postman (https://www.getpostman.com/) to send the request with the headers.
 
 - Without using an Accept-Language header
 
@@ -150,3 +150,7 @@ To test the implementation, we will use Postman (https://www.getpostman.com/) to
 
 ![NoHeader](/assets/img/posts/2018-05-26-i18n-using-Spring-Boot/WrongHeader.png)
 
+
+
+
+**Source Code:** https://github.com/capucho/spring-i18n
